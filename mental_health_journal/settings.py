@@ -15,7 +15,13 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'your-secret-key')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', 'True') == 'True'
 
+# Update ALLOWED_HOSTS to include your Render domain
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost').split(',')
+
+# Example:
+# If ALLOWED_HOSTS is set in your environment like this:
+# ALLOWED_HOSTS=mindmap-backend.onrender.com,localhost,127.0.0.1
+# It will be split into a list and included here.
 
 # Application definition
 INSTALLED_APPS = [
