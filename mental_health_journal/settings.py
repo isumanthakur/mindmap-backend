@@ -16,12 +16,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'your-secret-key')
 DEBUG = os.getenv('DEBUG', 'True') == 'True'
 
 # Update ALLOWED_HOSTS to include your Render domain
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost').split(',')
-
-# Example:
-# If ALLOWED_HOSTS is set in your environment like this:
-# ALLOWED_HOSTS=mindmap-backend.onrender.com,localhost,127.0.0.1
-# It will be split into a list and included here.
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'mindmap-backend.onrender.com,localhost').split(',')
 
 # Application definition
 INSTALLED_APPS = [
@@ -123,7 +118,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # CORS settings
-CORS_ALLOWED_ORIGINS = os.getenv('CORS_ALLOWED_ORIGINS', 'http://localhost:3000').split(',')
+CORS_ALLOWED_ORIGINS = os.getenv('CORS_ALLOWED_ORIGINS', 'https://mindmapfrontend.vercel.app,http://localhost:3000').split(',')
+CORS_ALLOW_CREDENTIALS = True
 
 # REST Framework settings
 REST_FRAMEWORK = {
